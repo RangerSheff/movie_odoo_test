@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_movie" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.movie</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app name="movie_module" string="Películas" data-string="Películas" logo="/movie_module/static/src/img/image.png">
+                    <block name="movie_module_settings" title="Variables de Integración con API">
+                        <setting id="movie_module_setting_external_api_url" string="URL Base" help="Ingrese la URL completa de la API externa para la integración de películas">
+                            <div class="text-muted">
+                                Configure la dirección URL base para conectarse al servicio externo
+                            </div>
+                            <div class="content-group mt-2">
+                                <field name="external_api_url" placeholder="https://api.example.com/movies" class="o_field_highlight"/>
+                            </div>
+                        </setting>
+                        <setting id="movie_module_setting_external_api_key" string="API Key" help="Clave de autenticación para acceder al servicio de películas">
+                            <div class="text-muted">
+                                Ingrese la clave API proporcionada por el proveedor del servicio
+                            </div>
+                            <div class="content-group mt-2">
+                                <field name="external_api_key" password="True" class="o_field_highlight"/>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
