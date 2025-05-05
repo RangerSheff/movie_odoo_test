@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Acción para abrir la vista películas -->
+    <record id="action_movie_movie" model="ir.actions.act_window">
+        <field name="name">Películas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">movie.movie</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+            eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('movie_module.view_movie_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('movie_module.view_movie_form')})
+            ]"/>
+    </record>
+
+    <!-- Menú Principal -->
+    <menuitem id="menu_movie_root" name="Películas"/>
+
+    <!-- Submenú Películas -->
+    <menuitem id="menu_movie_movie" name="Gestión de Películas"
+              parent="menu_movie_root"
+              action="action_movie_movie"/>
+</odoo>

@@ -1,0 +1,29 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_movie_tree" model="ir.ui.view">
+        <field name="name">movie.movie.tree</field>
+        <field name="model">movie.movie</field>
+        <field name="arch" type="xml">
+            <tree string="Películas">
+                <field name="title"/>
+                <field name="ranking"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_movie_form" model="ir.ui.view">
+        <field name="name">movie.movie.form</field>
+        <field name="model">movie.movie</field>
+        <field name="arch" type="xml">
+            <form string="Película">
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="ranking"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
